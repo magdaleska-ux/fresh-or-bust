@@ -17,10 +17,11 @@
     --orange:      #f4a261;
     --orange-dark: #c1440e;
     --red:         #c1121f;
-    --cream:       #f4f1ec;
-    --text-dark:   #1a2a1e;
+    --blue-dark:   #0d1b2a;
     --blue:        #1d3557;
     --blue-light:  #a8dadc;
+    --cream:       #f4f1ec;
+    --text-dark:   #1a2a1e;
     --white:       #ffffff;
     --grey:        #7a8f7e;
   }
@@ -48,34 +49,34 @@
   /* ── BREADCRUMB ── */
   .breadcrumb {
     display: flex;
-    gap: 3px;
-    padding: 10px 14px 0;
+    gap: 2px;
+    padding: 8px 12px 0;
     flex-shrink: 0;
   }
   .bc-step {
     flex: 1;
-    height: 7px;
-    border-radius: 4px;
+    height: 6px;
+    border-radius: 3px;
     background: var(--bg3);
     transition: background 0.3s;
   }
-  .bc-step.done   { background: var(--green); }
-  .bc-step.active { background: var(--green-mid); }
+  .bc-step.done    { background: var(--green); }
+  .bc-step.active  { background: var(--green-mid); }
 
   /* ── PATH BADGE ── */
   .path-badge {
     font-family: 'Source Code Pro', monospace;
-    font-size: 13px;
+    font-size: 11px;
     color: var(--grey);
     text-align: right;
-    padding: 5px 16px 0;
+    padding: 4px 14px 0;
     letter-spacing: 1px;
   }
 
   /* ── STAGE LABEL ── */
   .stage-label {
     font-family: 'Source Code Pro', monospace;
-    font-size: 12px;
+    font-size: 10px;
     letter-spacing: 3px;
     color: var(--green-mid);
     text-transform: uppercase;
@@ -85,22 +86,22 @@
   /* ── QUESTION ── */
   .question {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(26px, 6.5vw, 40px);
+    font-size: clamp(22px, 5.5vw, 34px);
     font-weight: 700;
     line-height: 1.15;
-    padding: 4px 16px 12px;
+    padding: 0 16px 10px;
     color: var(--white);
   }
 
   /* ── SITUATION BOX ── */
   .situation {
-    margin: 0 14px 12px;
+    margin: 0 12px 10px;
     background: var(--bg3);
     border: 1px solid var(--green);
-    border-radius: 10px;
-    padding: 12px 16px;
-    font-size: 15px;
-    line-height: 1.55;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    line-height: 1.5;
     color: var(--white);
     flex-shrink: 0;
   }
@@ -111,361 +112,564 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    margin: 0 14px 14px;
+    margin: 0 12px 12px;
     flex-shrink: 0;
   }
   .keyword-pill {
     background: var(--gold);
     color: var(--text-dark);
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
-    padding: 5px 14px;
+    padding: 4px 12px;
     border-radius: 20px;
     white-space: nowrap;
   }
   .keyword-hint {
-    font-size: 13px;
+    font-size: 11px;
     color: var(--gold);
     font-style: italic;
   }
 
   /* ── OPTION BUTTONS ── */
-  .options {
-    padding: 0 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    flex-shrink: 0;
-  }
+  .options { padding: 0 12px; display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; }
 
   .option-btn {
     display: flex;
     align-items: stretch;
     background: var(--cream);
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
-    border: 2.5px solid transparent;
+    border: 2px solid transparent;
     cursor: pointer;
     text-align: left;
     transition: transform 0.15s, box-shadow 0.15s;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
     -webkit-appearance: none;
     width: 100%;
   }
-  .option-btn:active { transform: scale(0.98); }
-  .option-btn.opt-a  { border-color: var(--green-mid); }
-  .option-btn.opt-b  { border-color: var(--orange); }
+  .option-btn:active { transform: scale(0.98); box-shadow: 0 1px 4px rgba(0,0,0,0.3); }
+  .option-btn.opt-a { border-color: var(--green-mid); }
+  .option-btn.opt-b { border-color: var(--orange); }
 
-  .option-bar { width: 7px; flex-shrink: 0; }
+  .option-bar {
+    width: 6px;
+    flex-shrink: 0;
+  }
   .opt-a .option-bar { background: var(--green-mid); }
   .opt-b .option-bar { background: var(--orange); }
 
-  .option-inner { padding: 12px 14px; flex: 1; }
+  .option-inner { padding: 10px 12px; flex: 1; }
 
   .option-label {
     display: inline-block;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 700;
-    padding: 3px 12px;
+    padding: 2px 10px;
     border-radius: 12px;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
     color: var(--text-dark);
   }
   .opt-a .option-label { background: var(--green-mid); }
   .opt-b .option-label { background: var(--orange); }
 
   .option-text {
-    font-size: 15px;
+    font-size: 13px;
     color: var(--text-dark);
-    line-height: 1.5;
-    font-weight: 600;
+    line-height: 1.45;
   }
 
   /* ── HINT BAR ── */
   .hint-bar {
-    margin: 12px 14px 0;
-    background: rgba(255,255,255,0.06);
+    margin: 10px 12px 0;
+    background: var(--blue-dark);
+    border: 1px solid var(--blue-light);
     border-radius: 8px;
-    padding: 10px 14px;
-    font-size: 13px;
-    color: var(--grey);
+    padding: 8px 12px;
+    font-size: 11px;
+    color: var(--white);
     line-height: 1.5;
     flex-shrink: 0;
-    text-align: center;
-    font-style: italic;
   }
+  .hint-bar strong { color: var(--gold); }
 
-  .bottom-pad { height: 24px; flex-shrink: 0; }
+  /* spacer at bottom of scrollable screens */
+  .bottom-pad { height: 20px; flex-shrink: 0; }
 
   /* ── INTRO SCREEN ── */
-  #screen-intro { background: var(--green); }
-
+  #screen-intro {
+    background: var(--green);
+  }
   .intro-hero {
-    padding: 36px 20px 20px;
+    padding: 28px 20px 16px;
     flex-shrink: 0;
   }
   .intro-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(44px, 12vw, 72px);
+    font-size: clamp(36px, 10vw, 64px);
     font-weight: 900;
     line-height: 1;
     color: var(--white);
     letter-spacing: 2px;
   }
   .intro-sub {
-    font-size: 15px;
-    color: var(--green-light);
-    margin-top: 10px;
-    font-style: italic;
-    line-height: 1.5;
-  }
-
-  .intro-card {
-    background: var(--bg);
-    border-radius: 20px 20px 0 0;
-    flex: 1;
-    padding: 24px 18px 0;
-  }
-
-  .intro-desc {
-    font-size: 16px;
-    color: var(--green-light);
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-  .intro-desc strong { color: var(--white); }
-
-  .intro-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 24px;
-  }
-  .intro-step {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: var(--bg3);
-    border-radius: 10px;
-    padding: 10px 14px;
-    border: 1px solid var(--green);
-  }
-  .step-num {
-    font-family: 'Source Code Pro', monospace;
     font-size: 13px;
-    font-weight: 700;
-    color: var(--green-mid);
-    min-width: 22px;
+    color: var(--green-light);
+    margin-top: 6px;
+    font-style: italic;
   }
-  .step-text {
-    font-size: 15px;
+  .vocab-section {
+    background: var(--bg);
+    border-radius: 16px 16px 0 0;
+    flex: 1;
+    padding: 16px 14px 0;
+  }
+  .vocab-title {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  @media (min-width: 600px) {
+    .vocab-grid { grid-template-columns: 1fr 1fr 1fr; }
+  }
+  .vocab-card {
+    background: var(--bg3);
+    border: 1px solid var(--green);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .vocab-term {
+    background: var(--green);
     color: var(--white);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 8px;
+  }
+  .vocab-def {
+    font-size: 11px;
+    color: var(--green-light);
+    padding: 6px 8px;
     line-height: 1.4;
   }
-
   .start-btn {
     display: block;
     background: var(--green-mid);
     color: var(--text-dark);
     font-family: 'Source Sans 3', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     text-align: center;
-    padding: 18px;
-    border-radius: 14px;
+    padding: 16px;
+    margin: 14px;
+    border-radius: 12px;
     border: none;
     cursor: pointer;
     letter-spacing: 1px;
-    box-shadow: 0 4px 20px rgba(82,183,136,0.4);
+    box-shadow: 0 4px 16px rgba(82,183,136,0.4);
     transition: transform 0.15s;
     -webkit-appearance: none;
-    width: 100%;
+    width: calc(100% - 28px);
   }
   .start-btn:active { transform: scale(0.97); }
 
   /* ── OUTCOME SCREEN ── */
-  #screen-outcome { background: var(--cream); color: var(--text-dark); }
-
+  #screen-outcome {
+    background: var(--cream);
+    color: var(--text-dark);
+  }
   .outcome-header {
     background: var(--blue);
-    padding: 16px 18px 14px;
+    padding: 14px 16px 10px;
     flex-shrink: 0;
   }
   .outcome-title {
     font-family: 'Playfair Display', serif;
-    font-size: 24px;
+    font-size: 22px;
     color: var(--white);
   }
   .outcome-path {
     font-family: 'Source Code Pro', monospace;
-    font-size: 13px;
+    font-size: 11px;
     color: var(--blue-light);
-    margin-top: 5px;
+    margin-top: 4px;
   }
   .score-chips {
     display: flex;
-    gap: 10px;
-    margin-top: 12px;
+    gap: 8px;
+    margin-top: 8px;
   }
   .score-chip {
     flex: 1;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 8px;
+    padding: 8px;
     text-align: center;
   }
   .score-chip .chip-val {
     font-family: 'Playfair Display', serif;
-    font-size: 34px;
+    font-size: 28px;
     font-weight: 700;
     color: var(--text-dark);
     display: block;
   }
   .score-chip .chip-label {
-    font-size: 13px;
+    font-size: 11px;
     color: var(--text-dark);
     font-weight: 600;
   }
   .chip-profit { background: var(--green-mid); }
   .chip-rep    { background: var(--orange); }
 
-  .outcome-body { padding: 14px 16px; }
+  .outcome-body { padding: 12px 14px; }
 
-  .section-title {
+  .choices-title {
     font-family: 'Source Code Pro', monospace;
-    font-size: 10px;
+    font-size: 9px;
     letter-spacing: 2px;
     color: var(--green);
-    margin-bottom: 8px;
-    text-transform: uppercase;
+    margin-bottom: 6px;
   }
-
   .choice-row {
     display: flex;
     align-items: center;
-    gap: 0;
-    margin-bottom: 6px;
+    gap: 8px;
+    margin-bottom: 5px;
     background: white;
-    border-radius: 8px;
+    border-radius: 6px;
     overflow: hidden;
     border: 1px solid #ddd;
   }
   .choice-pill {
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 700;
-    padding: 9px 10px;
+    padding: 6px 8px;
     color: var(--text-dark);
     white-space: nowrap;
     flex-shrink: 0;
     font-family: 'Source Code Pro', monospace;
-    min-width: 72px;
-    text-align: center;
   }
   .pill-a { background: var(--green-mid); }
   .pill-b { background: var(--orange); }
   .pill-q { background: #ccc; }
-
   .choice-text {
-    font-size: 14px;
-    color: var(--text-dark);
-    padding: 8px 10px;
-    line-height: 1.35;
-    border-left: 1px solid #eee;
-  }
-  .choice-stage {
     font-size: 11px;
-    color: #999;
-    display: block;
+    color: var(--text-dark);
+    padding: 6px 8px 6px 0;
+    line-height: 1.3;
   }
 
+  .story-title {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--green);
+    margin: 10px 0 6px;
+  }
   .story-item {
-    font-size: 15px;
+    font-size: 13px;
     color: var(--text-dark);
-    margin-bottom: 10px;
-    padding-left: 18px;
+    margin-bottom: 7px;
+    padding-left: 14px;
     position: relative;
-    line-height: 1.55;
+    line-height: 1.5;
   }
   .story-item::before {
     content: '▸';
     position: absolute;
     left: 0;
     color: var(--green-mid);
-    font-size: 16px;
   }
 
   .summary-bar {
-    border-radius: 10px;
-    padding: 12px 16px;
-    margin: 14px 0 8px;
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1.45;
-  }
-  .summary-total {
-    font-weight: 400;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 10px 0;
     font-size: 13px;
-    color: #999;
+    font-weight: 600;
+    line-height: 1.4;
   }
 
   .debrief {
-    font-size: 14px;
+    font-size: 12px;
     font-style: italic;
     color: #666;
-    margin-bottom: 16px;
-    line-height: 1.55;
-    padding: 10px 0;
-    border-top: 1px solid #ddd;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+
+  .phase2-note {
+    background: #e8f4e8;
+    border: 1px solid var(--green);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 12px;
+    color: var(--blue);
+    margin-bottom: 10px;
   }
 
   .play-again-btn {
     display: block;
     background: var(--green);
     color: var(--white);
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 700;
     text-align: center;
-    padding: 16px;
-    border-radius: 12px;
+    padding: 14px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
+    margin-bottom: 10px;
     width: 100%;
     -webkit-appearance: none;
     transition: transform 0.15s;
-    box-shadow: 0 4px 14px rgba(45,106,79,0.4);
   }
   .play-again-btn:active { transform: scale(0.97); }
+
+  /* ── CRISIS SCREENS ── */
+  .crisis-screen { background: var(--blue-dark); }
+
+  .crisis-header {
+    background: #070f18;
+    padding: 10px 14px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .crisis-tag {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--gold);
+  }
+  .crisis-badge {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+    color: var(--blue-light);
+    letter-spacing: 1px;
+  }
+
+  .crisis-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 5.5vw, 32px);
+    font-weight: 700;
+    padding: 12px 14px 6px;
+    color: var(--white);
+    line-height: 1.2;
+    flex-shrink: 0;
+  }
+
+  .crisis-desc {
+    margin: 0 12px 10px;
+    background: #112030;
+    border: 1px solid var(--blue-light);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 13px;
+    line-height: 1.5;
+    flex-shrink: 0;
+  }
+
+  .discuss-box {
+    margin: 0 12px 12px;
+    background: #0a1a0a;
+    border: 1.5px solid var(--green-mid);
+    border-radius: 10px;
+    padding: 12px 14px;
+    flex-shrink: 0;
+  }
+  .discuss-label {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--green-mid);
+    margin-bottom: 6px;
+  }
+  .discuss-q {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--white);
+  }
+  .discuss-hint {
+    font-size: 11px;
+    color: var(--grey);
+    font-style: italic;
+    margin: 8px 12px 0;
+    flex-shrink: 0;
+  }
+
+  .crisis-btn {
+    display: block;
+    background: var(--gold);
+    color: var(--text-dark);
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    padding: 15px;
+    margin: 12px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    -webkit-appearance: none;
+    box-shadow: 0 4px 16px rgba(233,196,106,0.3);
+    transition: transform 0.15s;
+    width: calc(100% - 24px);
+  }
+  .crisis-btn:active { transform: scale(0.97); }
+
+  /* ── CRISIS REVEAL ── */
+  .reveal-note {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--blue-light);
+    padding: 10px 14px 4px;
+    flex-shrink: 0;
+  }
+
+  .reveal-row {
+    margin: 4px 12px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid transparent;
+    flex-shrink: 0;
+  }
+  .reveal-row.good   { border-color: var(--green-mid); background: #0a2015; }
+  .reveal-row.bad    { border-color: var(--red);       background: #2a0a0a; }
+  .reveal-row.neutral{ border-color: var(--blue-light);background: #0a1530; }
+
+  .reveal-inner { display: flex; align-items: stretch; gap: 0; }
+
+  .reveal-paths {
+    background: inherit;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    min-width: 58px;
+    flex-shrink: 0;
+  }
+  .reveal-path-pill {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--text-dark);
+    white-space: nowrap;
+  }
+  .good .reveal-path-pill   { background: var(--green-mid); }
+  .bad .reveal-path-pill    { background: var(--red); color: white; }
+  .neutral .reveal-path-pill{ background: var(--blue-light); }
+
+  .reveal-content { padding: 8px 10px; flex: 1; }
+  .reveal-text { font-size: 12px; color: var(--white); line-height: 1.45; }
+
+  .reveal-chips {
+    display: flex;
+    gap: 4px;
+    margin-top: 5px;
+  }
+  .rev-chip {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 10px;
+    color: var(--text-dark);
+  }
+  .rev-chip.profit { background: var(--green-mid); }
+  .rev-chip.rep    { background: var(--orange); }
+
+  /* MY RESULT highlight */
+  .reveal-row.my-result {
+    box-shadow: 0 0 0 2px var(--gold);
+  }
+  .my-result-tag {
+    display: none;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 9px;
+    background: var(--gold);
+    color: var(--text-dark);
+    padding: 2px 8px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .reveal-row.my-result .my-result-tag { display: block; }
+
+  /* ── END SCREEN ── */
+  #screen-end {
+    background: var(--bg);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  .end-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: var(--green-mid);
+    margin-bottom: 10px;
+  }
+  .end-sub {
+    font-size: 14px;
+    color: var(--grey);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+  .end-btn {
+    background: var(--green-mid);
+    color: var(--text-dark);
+    font-size: 16px;
+    font-weight: 700;
+    padding: 15px 30px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
 </style>
 </head>
 <body>
 
-<!-- ════════════════════════════════
-     INTRO SCREEN
-════════════════════════════════ -->
+<!-- ═══════════════════════════════════
+     SCREEN: INTRO
+═══════════════════════════════════ -->
 <div class="screen active" id="screen-intro">
   <div class="intro-hero">
     <div class="intro-title">FRESH<br>OR BUST</div>
-    <div class="intro-sub">A Supply Chain Decision Game<br>You are launching a yoghurt brand. Make 6 decisions.</div>
+    <div class="intro-sub">A Supply Chain Decision Game &nbsp;·&nbsp; Make 6 decisions and see where you land.</div>
   </div>
-  <div class="intro-card">
-    <div class="intro-desc">
-      You run <strong>YoFresh</strong> — a new yoghurt company. At each stage of the supply chain, you face a real business decision. Your choices affect your profit and your reputation.
-    </div>
-    <div class="intro-steps">
-      <div class="intro-step"><div class="step-num">①</div><div class="step-text">Raw Materials — choose your milk supplier</div></div>
-      <div class="intro-step"><div class="step-num">②</div><div class="step-text">Inventory — how much milk to keep in stock</div></div>
-      <div class="intro-step"><div class="step-num">③</div><div class="step-text">Production — how many flavours to offer</div></div>
-      <div class="intro-step"><div class="step-num">④</div><div class="step-text">Packaging — cheap plastic or eco materials</div></div>
-      <div class="intro-step"><div class="step-num">⑤</div><div class="step-text">Distribution — hire a provider or run your own fleet</div></div>
-      <div class="intro-step"><div class="step-num">⑥</div><div class="step-text">Retail — supermarket chain or online direct</div></div>
+  <div class="vocab-section">
+    <div class="vocab-title">🔑 TARGET VOCABULARY</div>
+    <div class="vocab-grid">
+      <div class="vocab-card"><div class="vocab-term">supply chain</div><div class="vocab-def">All steps from raw material to the final customer.</div></div>
+      <div class="vocab-card"><div class="vocab-term">vendor</div><div class="vocab-def">A company that supplies you with goods or materials.</div></div>
+      <div class="vocab-card"><div class="vocab-term">raw materials</div><div class="vocab-def">Basic ingredients before any manufacturing.</div></div>
+      <div class="vocab-card"><div class="vocab-term">inventory</div><div class="vocab-def">Stock of goods stored waiting to be sold.</div></div>
+      <div class="vocab-card"><div class="vocab-term">JIT</div><div class="vocab-def">Just-In-Time: receive supplies only when needed.</div></div>
+      <div class="vocab-card"><div class="vocab-term">distribution centre</div><div class="vocab-def">Warehouse that sends goods out to shops.</div></div>
+      <div class="vocab-card"><div class="vocab-term">logistics provider</div><div class="vocab-def">Company paid to transport and deliver goods.</div></div>
+      <div class="vocab-card"><div class="vocab-term">reverse logistics</div><div class="vocab-def">Handling returned or unsold goods after sale.</div></div>
+      <div class="vocab-card"><div class="vocab-term">validate</div><div class="vocab-def">To officially check and confirm supplier quality.</div></div>
     </div>
     <button class="start-btn" onclick="startGame()">▶ Start the Game</button>
     <div class="bottom-pad"></div>
   </div>
 </div>
 
-<!-- ════════════════════════════════
-     DECISION SCREEN (reused)
-════════════════════════════════ -->
+<!-- ═══════════════════════════════════
+     SCREEN: DECISION (reused for all 6)
+═══════════════════════════════════ -->
 <div class="screen" id="screen-decision">
   <div class="breadcrumb" id="bc"></div>
   <div class="path-badge" id="path-badge"></div>
@@ -474,17 +678,17 @@
   <div class="situation" id="situation"></div>
   <div class="keyword-row">
     <div class="keyword-pill" id="keyword"></div>
-    <div class="keyword-hint">Use this in your discussion!</div>
+    <div class="keyword-hint">Use this word in your discussion!</div>
   </div>
   <div class="options">
-    <button class="option-btn opt-a" onclick="choose('A')">
+    <button class="option-btn opt-a" id="btn-a" onclick="choose('A')">
       <div class="option-bar"></div>
       <div class="option-inner">
         <div class="option-label">Option A</div>
         <div class="option-text" id="opt-a-text"></div>
       </div>
     </button>
-    <button class="option-btn opt-b" onclick="choose('B')">
+    <button class="option-btn opt-b" id="btn-b" onclick="choose('B')">
       <div class="option-bar"></div>
       <div class="option-inner">
         <div class="option-label">Option B</div>
@@ -492,16 +696,16 @@
       </div>
     </button>
   </div>
-  <div class="hint-bar">✏️ Record your choice on your sheet, then tap your answer.</div>
+  <div class="hint-bar" id="hint-bar">✏️ <strong>Record your choice</strong> on your sheet, then tap your answer.</div>
   <div class="bottom-pad"></div>
 </div>
 
-<!-- ════════════════════════════════
-     OUTCOME SCREEN
-════════════════════════════════ -->
+<!-- ═══════════════════════════════════
+     SCREEN: OUTCOME
+═══════════════════════════════════ -->
 <div class="screen" id="screen-outcome">
   <div class="outcome-header">
-    <div class="outcome-title">🏁 Your Result</div>
+    <div class="outcome-title">🏁 Your Result — End of Phase 1</div>
     <div class="outcome-path" id="outcome-path"></div>
     <div class="score-chips">
       <div class="score-chip chip-profit">
@@ -515,45 +719,145 @@
     </div>
   </div>
   <div class="outcome-body">
-    <div class="section-title">Your 6 Choices</div>
+    <div class="choices-title">YOUR 6 CHOICES</div>
     <div id="choices-list"></div>
-
-    <div class="section-title" style="margin-top:16px;">The Story of Your Supply Chain</div>
+    <div class="story-title">THE STORY OF YOUR SUPPLY CHAIN</div>
     <div id="story-list"></div>
-
     <div class="summary-bar" id="summary-bar"></div>
     <div class="debrief" id="debrief-text"></div>
+    <div class="phase2-note">⚡ When all teams are done — your teacher will take you to <strong>Phase 2: The Crises.</strong></div>
     <button class="play-again-btn" onclick="startGame()">▶ Play Again</button>
-    <div class="bottom-pad"></div>
+  </div>
+  <div class="bottom-pad"></div>
+</div>
+
+<!-- ═══════════════════════════════════
+     SCREENS: CRISIS DISCUSS (3×)
+═══════════════════════════════════ -->
+<div class="screen crisis-screen" id="screen-c1d">
+  <div class="crisis-header">
+    <div class="crisis-tag">⚡ PHASE 2 · CRISIS 1 OF 3</div>
+    <div class="crisis-badge">DISCUSS FIRST</div>
+  </div>
+  <div class="crisis-title">Heatwave — Yoghurt Sales Triple Overnight.</div>
+  <div class="crisis-desc">An unexpected heatwave hits. Demand for chilled food surges. Retailers are calling, asking for emergency stock. Can your supply chain respond?</div>
+  <div class="discuss-box">
+    <div class="discuss-label">💬 DISCUSS WITH YOUR TEAM</div>
+    <div class="discuss-q">Given your supplier and inventory choices — how well do you think your company handles this sudden surge? Which teams are best placed? Which are most vulnerable? Why?</div>
+  </div>
+  <div class="discuss-hint">Think about: your supplier, your inventory strategy, your packaging choice.</div>
+  <button class="crisis-btn" onclick="showScreen('screen-c1r')">▶ See the consequences</button>
+  <div class="bottom-pad"></div>
+</div>
+
+<div class="screen crisis-screen" id="screen-c2d">
+  <div class="crisis-header">
+    <div class="crisis-tag">⚡ PHASE 2 · CRISIS 2 OF 3</div>
+    <div class="crisis-badge">DISCUSS FIRST</div>
+  </div>
+  <div class="crisis-title">Driver Shortage — Deliveries Delayed Nationwide.</div>
+  <div class="crisis-desc">A national shortage of truck drivers means logistics companies are overwhelmed. Your yoghurt is sitting in the warehouse.</div>
+  <div class="discuss-box">
+    <div class="discuss-label">💬 DISCUSS WITH YOUR TEAM</div>
+    <div class="discuss-q">Think about your packaging choice. Which companies will logistics providers prioritise? Who gets left waiting? Does being an eco-friendly brand change anything?</div>
+  </div>
+  <div class="discuss-hint">Think about: your packaging decision and what it signals to partners.</div>
+  <button class="crisis-btn" onclick="showScreen('screen-c2r')">▶ See the consequences</button>
+  <div class="bottom-pad"></div>
+</div>
+
+<div class="screen crisis-screen" id="screen-c3d">
+  <div class="crisis-header">
+    <div class="crisis-tag">⚡ PHASE 2 · CRISIS 3 OF 3</div>
+    <div class="crisis-badge">DISCUSS FIRST</div>
+  </div>
+  <div class="crisis-title">A Food Influencer Posts About Your Brand.</div>
+  <div class="crisis-desc">A food influencer with 2 million followers posts a video about yoghurt brands. Your brand appears. The reaction depends entirely on what you've built.</div>
+  <div class="discuss-box">
+    <div class="discuss-label">💬 DISCUSS WITH YOUR TEAM</div>
+    <div class="discuss-q">Before we reveal — what do you think the influencer says about your brand? Positive or negative? What in your choices would drive a public reaction on social media?</div>
+  </div>
+  <div class="discuss-hint">Think about: every choice you made and what kind of brand it created.</div>
+  <button class="crisis-btn" onclick="showScreen('screen-c3r')">▶ See the consequences</button>
+  <div class="bottom-pad"></div>
+</div>
+
+<!-- ═══════════════════════════════════
+     SCREENS: CRISIS REVEAL (3×)
+═══════════════════════════════════ -->
+<div class="screen crisis-screen" id="screen-c1r">
+  <div class="crisis-header">
+    <div class="crisis-tag">⚡ CRISIS 1 — CONSEQUENCES</div>
+  </div>
+  <div class="crisis-title" style="font-size:clamp(18px,4.5vw,26px); padding-bottom:4px;">Heatwave — Who Survived the Surge?</div>
+  <div class="reveal-note">FIND YOUR PATH — what happened to YOUR company?</div>
+  <div id="c1-rows"></div>
+  <button class="crisis-btn" onclick="showScreen('screen-c2d')">▶ Next crisis</button>
+  <div class="bottom-pad"></div>
+</div>
+
+<div class="screen crisis-screen" id="screen-c2r">
+  <div class="crisis-header">
+    <div class="crisis-tag">⚡ CRISIS 2 — CONSEQUENCES</div>
+  </div>
+  <div class="crisis-title" style="font-size:clamp(18px,4.5vw,26px); padding-bottom:4px;">Driver Shortage — Who Kept Delivering?</div>
+  <div class="reveal-note">FIND YOUR PATH — what happened to YOUR company?</div>
+  <div id="c2-rows"></div>
+  <button class="crisis-btn" onclick="showScreen('screen-c3d')">▶ Next crisis</button>
+  <div class="bottom-pad"></div>
+</div>
+
+<div class="screen crisis-screen" id="screen-c3r">
+  <div class="crisis-header">
+    <div class="crisis-tag">⚡ CRISIS 3 — CONSEQUENCES</div>
+  </div>
+  <div class="crisis-title" style="font-size:clamp(18px,4.5vw,26px); padding-bottom:4px;">Viral Moment — What Did the World See?</div>
+  <div class="reveal-note">FIND YOUR PATH — what happened to YOUR company?</div>
+  <div id="c3-rows"></div>
+  <button class="crisis-btn" onclick="showScreen('screen-end')">▶ Finish</button>
+  <div class="bottom-pad"></div>
+</div>
+
+<!-- ═══════════════════════════════════
+     SCREEN: END
+═══════════════════════════════════ -->
+<div class="screen" id="screen-end">
+  <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:30px 20px; text-align:center;">
+    <div class="end-title">🎓 Game Over!</div>
+    <div class="end-sub">That's the end of Fresh or Bust.<br>Great discussions — well played!</div>
+    <button class="end-btn" onclick="startGame()">▶ Play Again from the Start</button>
   </div>
 </div>
 
 <script>
-// ════════════════════════════
+// ═══════════════════════════════════
 // GAME DATA
-// ════════════════════════════
+// ═══════════════════════════════════
+
 const STEPS = [
   {
     id: 'supplier',
     stageLabel: 'Stage 1 · Raw Materials',
     question: 'Who will supply your milk?',
-    situation: '<strong>SITUATION:</strong> You\'re launching YoFresh. You need a reliable, affordable milk supplier. Two options are on the table.',
+    situation: '<strong>SITUATION:</strong> You\'re launching YoFresh — a new yoghurt brand. You need a reliable, affordable milk supplier.',
     keyword: '🔑 vendor',
     optA: 'LOCAL FARM — Fresh milk, delivered daily. Costs 30% more. Short, reliable supply route.',
     optB: 'DISTANT VENDOR — Much cheaper. Delivers once a week. Longer route, lower quality control.',
+    branches: true,
   },
   {
     id: 'inventory',
     stageLabel: 'Stage 2 · Inventory',
     question: 'How much milk will you keep in stock?',
-    situationA: '<strong>SITUATION:</strong> Your local farm delivers daily — reliable! But you must decide how to manage your milk inventory.',
+    situationA: '<strong>SITUATION:</strong> Your local farm delivers daily — reliable! But you must still decide how to manage your milk inventory.',
     situationB: '<strong>SITUATION:</strong> Your distant vendor delivers weekly — cheap but infrequent. How will you manage stock between deliveries?',
     keywordA: '🔑 JIT (Just-In-Time)',
     keywordB: '🔑 inventory',
     optAA: 'JIT — Order only what production needs, when it needs it. Lean and cheap, but zero safety buffer.',
     optAB: 'BIG STOCK — Keep a week\'s supply in cold storage. Safe, but high refrigeration costs.',
     optBA: 'JIT — Risky with weekly deliveries, but saves on storage costs if nothing goes wrong.',
-    optBB: 'BIG STOCK — Store a full week\'s supply. Expensive but essential with weekly deliveries.',
+    optBB: 'BIG STOCK — Store a full week\'s supply. Expensive but essential given how rarely your vendor delivers.',
+    branches: true,
   },
   {
     id: 'flavours',
@@ -563,92 +867,158 @@ const STEPS = [
     keyword: '🔑 define product quality',
     optA: '8 FLAVOURS — Wide range, higher appeal. Slower production, more potential waste.',
     optB: '3 FLAVOURS — Fast, focused production. Lower waste, but narrower market.',
+    branches: false,
   },
   {
     id: 'packaging',
     stageLabel: 'Stage 4 · Packaging',
     question: 'How will you package your yoghurt?',
-    situation: '<strong>SITUATION:</strong> Your yoghurt is ready to be packaged. This decision affects both your costs and your brand image with customers.',
+    situation: '<strong>SITUATION:</strong> Your yoghurt is ready to be packaged. This decision affects both your costs and your brand image.',
     keyword: '🔑 reverse logistics',
     optA: 'CHEAP PLASTIC — Low cost, widely available. Environmental impact growing. Customers are noticing.',
-    optB: 'ECO PACKAGING — Recyclable materials, 25% more expensive. Builds strong reputation with younger buyers.',
+    optB: 'ECO PACKAGING — Recyclable materials, 25% more expensive. Builds reputation with younger buyers.',
+    branches: true,
   },
   {
     id: 'distribution',
     stageLabel: 'Stage 5 · Distribution',
     question: 'Who will deliver your yoghurt to retailers?',
-    situation: '<strong>SITUATION:</strong> Your yoghurt needs to reach supermarket shelves fast — especially important for chilled products. How will you handle delivery?',
+    situation: '<strong>SITUATION:</strong> Your yoghurt needs to reach supermarket shelves fast. How will you handle delivery?',
     keyword: '🔑 logistics provider',
-    optA: 'HIRE A LOGISTICS PROVIDER — Reliable and professional. More expensive, but not your problem to manage.',
-    optB: 'RUN YOUR OWN FLEET — Cheaper if it works. But you manage drivers, maintenance and scheduling yourself.',
+    optA: 'HIRE A LOGISTICS PROVIDER — Reliable, professional. More expensive, but not your problem to manage.',
+    optB: 'RUN YOUR OWN FLEET — Cheaper if it works. But you manage drivers, maintenance and scheduling.',
+    branches: false,
   },
   {
     id: 'retail',
     stageLabel: 'Stage 6 · Retail',
     question: 'Where will you sell your yoghurt?',
-    situation: '<strong>SITUATION:</strong> Time to get YoFresh on shelves. You need retail partners. Two very different routes to market are available.',
+    situation: '<strong>SITUATION:</strong> Time to get YoFresh on shelves. Two very different routes to market are available.',
     keyword: '🔑 distribution centre',
     optA: 'SUPERMARKET CHAIN — Huge volume, wide reach. But they take a 30% cut and control shelf space.',
-    optB: 'ONLINE DIRECT — Keep more profit per unit. But delivery costs are high and you need to build awareness.',
+    optB: 'ONLINE DIRECT — Keep more profit per unit. But delivery costs high and you need to build awareness.',
+    branches: false,
   },
 ];
 
+// Outcomes keyed by 3-letter path (supplier+inventory+packaging)
 const OUTCOMES = {
-  AAA: { profit: 4, rep: 2,
-    results: ['Fresh local milk and JIT kept costs lean and quality high — a strong foundation.','Cheap plastic packaging saved money but is attracting negative attention from eco-conscious buyers.','Your supply chain ran smoothly but your brand image lags behind greener competitors.'],
-    summary: 'Efficient and profitable — but plastic packaging is a growing reputation risk.',
-    summaryColor: '#f4a261', tip: 'Would spending more on packaging have changed your long-term prospects?' },
-  AAB: { profit: 4, rep: 5,
-    results: ['Local farm + JIT: lean, fresh, and reliable. A very strong supply chain base.','Eco packaging cost more but younger consumers actively choose your brand over rivals.','Clean image and reliable supply — you\'re winning shelf space and customer loyalty.'],
+  AAA: {
+    profit: 4, rep: 2,
+    results: [
+      'Fresh local milk and JIT kept costs lean and quality high — a strong foundation.',
+      'Cheap plastic packaging saved money but is starting to attract negative attention.',
+      'Your supply chain ran smoothly but your brand image lags behind greener competitors.',
+    ],
+    summary: 'Efficient and profitable — but plastic packaging is a reputation risk.',
+    summaryColor: '#f4a261',
+    tip: 'Would spending more on packaging have changed your long-term prospects?',
+  },
+  AAB: {
+    profit: 4, rep: 5,
+    results: [
+      'Local farm + JIT: lean, fresh, and reliable. A strong supply chain base.',
+      'Eco packaging cost more but younger consumers actively prefer your brand.',
+      'Clean image and reliable supply — you\'re winning shelf space and customer loyalty.',
+    ],
     summary: 'Lean supply chain meets strong brand values. Near-perfect!',
-    summaryColor: '#52b788', tip: 'This path costs more. Was the reputation gain worth the extra expense?' },
-  ABA: { profit: 3, rep: 2,
-    results: ['Big stock + local farm: you never ran out — production was always covered.','Refrigeration costs ate into your margins significantly over time.','Cheap plastic kept costs down, but you\'re not winning any sustainability points.'],
+    summaryColor: '#52b788',
+    tip: 'This path costs more. Was the reputation gain worth the extra expense?',
+  },
+  ABA: {
+    profit: 3, rep: 2,
+    results: [
+      'Big stock + local farm: you never ran out — production always covered.',
+      'Refrigeration costs ate into your margins significantly.',
+      'Cheap plastic kept costs down, but you\'re not winning any sustainability points.',
+    ],
     summary: 'Safe and steady — but high costs and low reputation hold you back.',
-    summaryColor: '#f4a261', tip: 'If you had chosen eco packaging, could the reputation gain justify the added cost?' },
-  ABB: { profit: 3, rep: 6,
-    results: ['Local farm + big stock: the most reliable supply chain possible. Never missed a delivery.','Eco packaging pushed your brand into premium territory — retailers gave you prime shelf space.','Costs are high but so is every metric: quality, reputation, reliability.'],
-    summary: 'The premium path — maximum reputation, high costs. Sustainable long-term?',
-    summaryColor: '#52b788', tip: 'Is it possible to maintain this expensive strategy as you scale up?' },
-  BAA: { profit: 4, rep: 1,
-    results: ['Distant vendor + JIT: the riskiest combination. One late delivery = production stops.','You got lucky — no major disruptions this period. Costs are very low.','Cheap plastic saves money, but the brand feels low-quality to many customers.'],
+    summaryColor: '#f4a261',
+    tip: 'If you had chosen eco packaging, could the reputation gain justify the added cost?',
+  },
+  ABB: {
+    profit: 3, rep: 6,
+    results: [
+      'Local farm + big stock: the most reliable supply chain possible.',
+      'Eco packaging pushed your brand into premium territory — retailers gave you prime shelf space.',
+      'Costs are high but so is every metric: quality, reputation, reliability.',
+    ],
+    summary: 'The premium path — maximum reputation, high costs.',
+    summaryColor: '#52b788',
+    tip: 'Is it possible to maintain this strategy as you scale up?',
+  },
+  BAA: {
+    profit: 4, rep: 1,
+    results: [
+      'Distant vendor + JIT: the riskiest combination. One late delivery = production stops.',
+      'You got lucky — no major disruptions this period. Costs are very low.',
+      'Cheap plastic saves money, but the brand feels low-quality to customers.',
+    ],
     summary: 'High profit for now — but built on a very fragile foundation.',
-    summaryColor: '#f4a261', tip: 'How long before this strategy breaks? What\'s the first thing that could go wrong?' },
-  BAB: { profit: 3, rep: 4,
-    results: ['Distant vendor + JIT: fragile but cheap. You\'re walking a tightrope every week.','Eco packaging is building genuine brand loyalty — customers actively trust you.','Good brand, shaky supply chain. One disruption could destroy the reputation you\'ve built.'],
+    summaryColor: '#f4a261',
+    tip: 'How long before this strategy breaks? What\'s the first thing that could go wrong?',
+  },
+  BAB: {
+    profit: 3, rep: 4,
+    results: [
+      'Distant vendor + JIT: fragile, but cheap. You\'re walking a tightrope.',
+      'Eco packaging is building genuine brand loyalty — customers trust you.',
+      'Good brand, shaky supply chain. One disruption could destroy the reputation you\'ve built.',
+    ],
     summary: 'Strong brand, weak supply chain. A fascinating contradiction.',
-    summaryColor: '#f4a261', tip: 'Can good branding compensate for supply chain vulnerability? For how long?' },
-  BBA: { profit: 5, rep: 2,
-    results: ['Distant vendor + big stock: smart pairing. The stockpile protects you from late deliveries.','Costs are moderate — cheap vendor offsets the expensive storage.','Plastic packaging keeps costs down, but you\'re invisible to eco-conscious buyers.'],
+    summaryColor: '#f4a261',
+    tip: 'Can good branding compensate for supply chain vulnerability? For how long?',
+  },
+  BBA: {
+    profit: 5, rep: 2,
+    results: [
+      'Distant vendor + big stock: smart pairing. The stockpile protects you from late deliveries.',
+      'Costs are moderate — cheap vendor offsets the expensive storage.',
+      'Plastic packaging keeps costs down, but you\'re invisible to eco-conscious buyers.',
+    ],
     summary: 'The budget supply chain — solid profit, weak brand appeal.',
-    summaryColor: '#f4a261', tip: 'You have good margins. Would investing some profit in eco packaging make sense now?' },
-  BBB: { profit: 4, rep: 4,
-    results: ['Distant vendor + big stock: reliable enough, and cheap. A smart budget pairing.','Eco packaging lifted your brand image significantly with urban consumers.','Moderate costs, good reputation. A well-balanced if unglamorous strategy.'],
+    summaryColor: '#f4a261',
+    tip: 'You have good margins. Would investing some profit into eco packaging make sense?',
+  },
+  BBB: {
+    profit: 4, rep: 4,
+    results: [
+      'Distant vendor + big stock: reliable enough, and cheap. A smart budget pairing.',
+      'Eco packaging lifted your brand image significantly.',
+      'Moderate costs, good reputation. A well-balanced strategy.',
+    ],
     summary: 'Balanced and honest — good value for money, good values too.',
-    summaryColor: '#52b788', tip: 'This is the "good enough" path. Is that a valid long-term business strategy?' },
+    summaryColor: '#52b788',
+    tip: 'This is the "good enough" path. Is that a valid long-term strategy?',
+  },
 };
 
-const STAGE_NAMES  = ['① Supplier','② Inventory','③ Flavours','④ Packaging','⑤ Distribution','⑥ Retail'];
-const STAGE_IDS    = ['supplier','inventory','flavours','packaging','distribution','retail'];
-const BRANCHING    = ['supplier','inventory','packaging'];
-const CHOICE_LABELS = {
-  supplier:     { A: 'Local farm',         B: 'Distant vendor' },
-  inventory:    { A: 'JIT',                B: 'Big stock' },
-  flavours:     { A: '8 flavours',          B: '3 flavours' },
-  packaging:    { A: 'Cheap plastic',       B: 'Eco packaging' },
-  distribution: { A: 'Logistics provider',  B: 'Own fleet' },
-  retail:       { A: 'Supermarket chain',   B: 'Online direct' },
+const CRISIS_ROWS = {
+  c1: [
+    { paths: ['AA'], result: 'JIT + local farm: daily deliveries scale up fast. You meet the surge — just.', profit: 3, rep: 2, tone: 'good' },
+    { paths: ['AB'], result: 'Big stock + local farm: reserves AND fast supply. You dominate the shelves.', profit: 5, rep: 3, tone: 'good' },
+    { paths: ['BA'], result: 'JIT + distant vendor: weekly delivery can\'t restock fast enough. You miss the peak.', profit: 1, rep: 0, tone: 'bad' },
+    { paths: ['BB'], result: 'Big stock + distant vendor: your stockpile saves you. You sell everything stored.', profit: 3, rep: 1, tone: 'neutral' },
+  ],
+  c2: [
+    { paths: ['B (packaging)'], result: 'Eco packaging brand: logistics providers prioritise your green contracts. On-time delivery.', profit: 2, rep: 2, tone: 'good', key: 'B' },
+    { paths: ['A (packaging)'], result: 'Cheap plastic brand: deprioritised by logistics partners. Deliveries delayed 3+ days.', profit: 0, rep: -1, tone: 'bad', key: 'A' },
+  ],
+  c3: [
+    { paths: ['B (packaging)'], result: '\'Love that YoFresh uses sustainable packaging!\' Post goes viral positively. Sales spike.', profit: 3, rep: 4, tone: 'good', key: 'B' },
+    { paths: ['A (packaging)'], result: '\'Why is YoFresh still using single-use plastic?!\' Negative backlash. Returns spike.', profit: -1, rep: -3, tone: 'bad', key: 'A' },
+  ],
 };
 
-// ════════════════════════════
+// ═══════════════════════════════════
 // STATE
-// ════════════════════════════
+// ═══════════════════════════════════
 let currentStep = 0;
-let choices = {};
+let choices = {}; // { supplier: 'A', inventory: 'B', ... }
 
-// ════════════════════════════
+// ═══════════════════════════════════
 // NAVIGATION
-// ════════════════════════════
+// ═══════════════════════════════════
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   const el = document.getElementById(id);
@@ -663,50 +1033,62 @@ function startGame() {
   showScreen('screen-decision');
 }
 
-// ════════════════════════════
-// LOAD STEP
-// ════════════════════════════
+// ═══════════════════════════════════
+// LOAD A DECISION STEP
+// ═══════════════════════════════════
 function loadStep(idx) {
   const step = STEPS[idx];
+  const prevSupplier = choices.supplier || null;
+  const prevInventory = choices.inventory || null;
 
   // Breadcrumb
-  document.getElementById('bc').innerHTML = STEPS.map((_, i) =>
-    `<div class="bc-step ${i < idx ? 'done' : i === idx ? 'active' : ''}"></div>`
-  ).join('');
+  const bc = document.getElementById('bc');
+  bc.innerHTML = STEPS.map((_, i) => {
+    const cls = i < idx ? 'done' : i === idx ? 'active' : '';
+    return `<div class="bc-step ${cls}"></div>`;
+  }).join('');
 
   // Path badge
-  const p = buildPath();
-  document.getElementById('path-badge').textContent = p ? 'PATH: ' + p : '';
+  const pathStr = buildPath();
+  document.getElementById('path-badge').textContent = pathStr ? `PATH: ${pathStr}` : '';
 
-  // Labels
+  // Stage label
   document.getElementById('stage-label').textContent = step.stageLabel;
-  document.getElementById('question').textContent    = step.question;
 
-  // Situation (inventory varies by supplier choice)
-  let sit = step.situation || '';
-  if (step.id === 'inventory') sit = choices.supplier === 'B' ? step.situationB : step.situationA;
-  document.getElementById('situation').innerHTML = sit;
+  // Question
+  document.getElementById('question').textContent = step.question;
+
+  // Situation — some steps vary by previous choice
+  let situation = step.situation || '';
+  if (step.id === 'inventory') {
+    situation = prevSupplier === 'B' ? step.situationB : step.situationA;
+  }
+  document.getElementById('situation').innerHTML = situation;
 
   // Keyword
-  let kw = step.keyword || '';
-  if (step.id === 'inventory') kw = choices.supplier === 'B' ? step.keywordB : step.keywordA;
-  document.getElementById('keyword').textContent = kw;
+  let keyword = step.keyword || '';
+  if (step.id === 'inventory') {
+    keyword = prevSupplier === 'B' ? step.keywordB : step.keywordA;
+  }
+  document.getElementById('keyword').textContent = keyword;
 
-  // Options (inventory varies)
+  // Options
   let optA = step.optA, optB = step.optB;
   if (step.id === 'inventory') {
-    optA = choices.supplier === 'B' ? step.optBA : step.optAA;
-    optB = choices.supplier === 'B' ? step.optBB : step.optAB;
+    if (prevSupplier === 'A') { optA = step.optAA; optB = step.optAB; }
+    else                      { optA = step.optBA; optB = step.optBB; }
   }
   document.getElementById('opt-a-text').textContent = optA;
   document.getElementById('opt-b-text').textContent = optB;
 }
 
-// ════════════════════════════
-// CHOOSE
-// ════════════════════════════
+// ═══════════════════════════════════
+// HANDLE CHOICE
+// ═══════════════════════════════════
 function choose(option) {
-  choices[STEPS[currentStep].id] = option;
+  const step = STEPS[currentStep];
+  choices[step.id] = option;
+
   currentStep++;
   if (currentStep < STEPS.length) {
     loadStep(currentStep);
@@ -716,64 +1098,184 @@ function choose(option) {
   }
 }
 
-// ════════════════════════════
-// PATH HELPERS
-// ════════════════════════════
+// ═══════════════════════════════════
+// BUILD PATH CODE (3-letter from branching steps)
+// ═══════════════════════════════════
 function buildPath() {
-  return (choices.supplier || '') + (choices.inventory || '') + (choices.packaging || '');
+  const s = choices.supplier   || '';
+  const i = choices.inventory  || '';
+  const p = choices.packaging  || '';
+  return s + i + p;
 }
 
 function buildFullPath() {
-  return STAGE_IDS.map(id => choices[id] || '?').join(' → ');
+  return [
+    choices.supplier   || '?',
+    choices.inventory  || '?',
+    choices.flavours   || '?',
+    choices.packaging  || '?',
+    choices.distribution || '?',
+    choices.retail     || '?',
+  ].join(' → ');
 }
 
-// ════════════════════════════
-// OUTCOME
-// ════════════════════════════
+// ═══════════════════════════════════
+// SHOW OUTCOME
+// ═══════════════════════════════════
 function showOutcome() {
   const path = buildPath();
   const o = OUTCOMES[path] || OUTCOMES['AAA'];
 
+  // Path display
   document.getElementById('outcome-path').textContent = 'Path: ' + buildFullPath();
 
+  // Scores
   const ps = o.profit >= 0 ? '+' : '';
   const rs = o.rep    >= 0 ? '+' : '';
   document.getElementById('score-profit').textContent = ps + o.profit;
   document.getElementById('score-rep').textContent    = rs + o.rep;
 
-  // Choices
-  let html = '';
-  STAGE_IDS.forEach((id, i) => {
-    const c = choices[id] || '?';
-    const isBranch = BRANCHING.includes(id);
-    const pillCls  = isBranch ? (c === 'A' ? 'pill-a' : 'pill-b') : 'pill-q';
-    const pillTxt  = isBranch ? `Option ${c}` : `Your ${c}`;
-    const label    = CHOICE_LABELS[id][c] || '—';
-    html += `
+  // Choices list
+  const stageNames = ['① Supplier','② Inventory','③ Flavours','④ Packaging','⑤ Distribution','⑥ Retail'];
+  const stageIds   = ['supplier','inventory','flavours','packaging','distribution','retail'];
+  const labels = {
+    supplier:     { A: 'Local farm',          B: 'Distant vendor' },
+    inventory:    { A: 'JIT',                 B: 'Big stock' },
+    flavours:     { A: '8 flavours',           B: '3 flavours' },
+    packaging:    { A: 'Cheap plastic',        B: 'Eco packaging' },
+    distribution: { A: 'Logistics provider',   B: 'Own fleet' },
+    retail:       { A: 'Supermarket chain',    B: 'Online direct' },
+  };
+  const branching = ['supplier','inventory','packaging'];
+
+  let choicesHtml = '';
+  stageIds.forEach((id, i) => {
+    const c = choices[id];
+    const isBranching = branching.includes(id);
+    const pillClass = isBranching ? (c === 'A' ? 'pill-a' : 'pill-b') : 'pill-q';
+    const pillText  = isBranching ? `Option ${c}` : `Your ${c || '?'}`;
+    const label     = labels[id][c] || 'recorded on sheet';
+    choicesHtml += `
       <div class="choice-row">
-        <div class="choice-pill ${pillCls}">${pillTxt}</div>
-        <div class="choice-text">
-          <span class="choice-stage">${STAGE_NAMES[i]}</span>
-          ${label}
-        </div>
+        <div class="choice-pill ${pillClass}">${pillText}</div>
+        <div class="choice-text"><strong>${stageNames[i]}:</strong> ${label}</div>
       </div>`;
   });
-  document.getElementById('choices-list').innerHTML = html;
+  document.getElementById('choices-list').innerHTML = choicesHtml;
 
   // Story
-  document.getElementById('story-list').innerHTML =
-    o.results.map(r => `<div class="story-item">${r}</div>`).join('');
+  let storyHtml = '';
+  o.results.forEach(r => { storyHtml += `<div class="story-item">${r}</div>`; });
+  document.getElementById('story-list').innerHTML = storyHtml;
 
   // Summary
   const total = o.profit + o.rep;
   const sb = document.getElementById('summary-bar');
-  sb.style.cssText = `background:${o.summaryColor}20; border:1.5px solid ${o.summaryColor}; color:${o.summaryColor}`;
-  sb.innerHTML = `📊 ${o.summary} <span class="summary-total">(Total: ${total >= 0 ? '+' : ''}${total} pts)</span>`;
+  sb.style.background = o.summaryColor + '22';
+  sb.style.border = `1px solid ${o.summaryColor}`;
+  sb.style.color = o.summaryColor;
+  sb.innerHTML = `📊 ${o.summary} <span style="color:#999;font-weight:400">(Total: ${total >= 0 ? '+' : ''}${total} pts)</span>`;
 
+  // Debrief
   document.getElementById('debrief-text').textContent = '💬 ' + o.tip;
+
+  // Build crisis rows (do it now so they're ready)
+  buildCrisisRows();
 
   showScreen('screen-outcome');
 }
+
+// ═══════════════════════════════════
+// BUILD CRISIS REVEAL ROWS
+// ═══════════════════════════════════
+function buildCrisisRows() {
+  const mySupInv = (choices.supplier || '?') + (choices.inventory || '?');
+  const myPack   = choices.packaging || '?';
+
+  // Crisis 1 — keyed by supplier+inventory
+  let c1Html = '';
+  CRISIS_ROWS.c1.forEach(row => {
+    const isMe = row.paths.includes(mySupInv);
+    const tone = row.profit > 0 ? 'good' : row.profit < 0 ? 'bad' : 'neutral';
+    const ps = row.profit >= 0 ? '+' : '';
+    const rs = row.rep    >= 0 ? '+' : '';
+    const meTag = isMe ? '<div class="my-result-tag">⭐ YOUR RESULT</div>' : '';
+    c1Html += `
+      <div class="reveal-row ${tone} ${isMe ? 'my-result' : ''}">
+        ${meTag}
+        <div class="reveal-inner">
+          <div class="reveal-paths">
+            ${row.paths.map(p => `<div class="reveal-path-pill">${p}</div>`).join('')}
+          </div>
+          <div class="reveal-content">
+            <div class="reveal-text">${row.result}</div>
+            <div class="reveal-chips">
+              <div class="rev-chip profit">${ps}${row.profit} 💰</div>
+              <div class="rev-chip rep">${rs}${row.rep} ⭐</div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  });
+  document.getElementById('c1-rows').innerHTML = c1Html;
+
+  // Crisis 2 — keyed by packaging
+  let c2Html = '';
+  CRISIS_ROWS.c2.forEach(row => {
+    const isMe = row.key === myPack;
+    const tone = row.profit > 0 ? 'good' : 'bad';
+    const ps = row.profit >= 0 ? '+' : '';
+    const rs = row.rep    >= 0 ? '+' : '';
+    const meTag = isMe ? '<div class="my-result-tag">⭐ YOUR RESULT</div>' : '';
+    c2Html += `
+      <div class="reveal-row ${tone} ${isMe ? 'my-result' : ''}">
+        ${meTag}
+        <div class="reveal-inner">
+          <div class="reveal-paths">
+            ${row.paths.map(p => `<div class="reveal-path-pill">${p}</div>`).join('')}
+          </div>
+          <div class="reveal-content">
+            <div class="reveal-text">${row.result}</div>
+            <div class="reveal-chips">
+              <div class="rev-chip profit">${ps}${row.profit} 💰</div>
+              <div class="rev-chip rep">${rs}${row.rep} ⭐</div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  });
+  document.getElementById('c2-rows').innerHTML = c2Html;
+
+  // Crisis 3 — keyed by packaging
+  let c3Html = '';
+  CRISIS_ROWS.c3.forEach(row => {
+    const isMe = row.key === myPack;
+    const tone = row.profit > 0 ? 'good' : 'bad';
+    const ps = row.profit >= 0 ? '+' : '';
+    const rs = row.rep    >= 0 ? '+' : '';
+    const meTag = isMe ? '<div class="my-result-tag">⭐ YOUR RESULT</div>' : '';
+    c3Html += `
+      <div class="reveal-row ${tone} ${isMe ? 'my-result' : ''}">
+        ${meTag}
+        <div class="reveal-inner">
+          <div class="reveal-paths">
+            ${row.paths.map(p => `<div class="reveal-path-pill">${p}</div>`).join('')}
+          </div>
+          <div class="reveal-content">
+            <div class="reveal-text">${row.result}</div>
+            <div class="reveal-chips">
+              <div class="rev-chip profit">${ps}${row.profit} 💰</div>
+              <div class="rev-chip rep">${rs}${row.rep} ⭐</div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  });
+  document.getElementById('c3-rows').innerHTML = c3Html;
+}
+
+// Crisis entry point (teacher navigates to this)
+function startCrises() { showScreen('screen-c1d'); }
 </script>
 </body>
 </html>
